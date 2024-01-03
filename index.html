@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- <div id="main">
+        <div class="re" id="red" ></div>
+        <div class="ye" id="yellow"></div>
+        <div class="gr" id="green"></div>
+    </div> -->
+
+    <div id="main">
+      <button class="re colorSqure" value="red">clicked</button>
+      <button class="ye colorSqure" value="yellow"></button>
+      <button class="gr colorSqure" value="green"></button>
+      <button id="clear-game" onclick=" clearScores()">Clear Game</button>
+    </div>
+
+    <script>
+      let a = document.querySelectorAll(".colorSqure");
+
+      const timeClicked = { red: 0, yellow: 0, green: 0 };
+      a.forEach((squres) => {
+        squres.onclick = () => {
+          timeClicked[squres.value] += 1;
+          squres.innerHTML = timeClicked[squres.value];
+        };
+      });
+
+      function clearScores() {
+        a.forEach((squres) => {
+            timeClicked[squres.value] = 0;
+           squres.innerText = " ";
+        });
+        alert('You want to clear your game')
+      }
+
+
+    </script>
+
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
